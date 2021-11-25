@@ -1,6 +1,8 @@
 #Visual Studio
-.vs\
+.vs/
+x64/Debug/*
 *.tlog
+*.log
 
 # Prerequisites
 *.d
