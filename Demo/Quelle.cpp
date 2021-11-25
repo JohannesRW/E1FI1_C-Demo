@@ -40,8 +40,7 @@ double durchschnitt(double vektor[], int anzahl);
 /* Menüs */
 
 /* 
-Function: main
---------------
+main
 Gibt das Hauptmenü aus
 */
 void main(void) {
@@ -105,8 +104,7 @@ void main(void) {
     } while (auswahl != 0); //Bei 0 Beenden
 }
 /*
-Function: fnMenueSchleifen
---------------------------
+fnMenueSchleifen
 Gibt das Menü für Schleifen aus
 */
 void fnMenueSchleifen(void) {
@@ -139,8 +137,7 @@ void fnMenueSchleifen(void) {
     } while (auswahl != 0); //Bei 0 Zurück
 }
 /*
-Function: fnMenueSterne
------------------------
+fnMenueSterne
 Gibt das Menü für Sterne aus
 */
 void fnMenueSterne(void) {
@@ -169,8 +166,7 @@ void fnMenueSterne(void) {
     } while (auswahl != 0); //Bei 0 Zurück
 }
 /*
-Function: fnMenueRekursion
---------------------------
+fnMenueRekursion
 Gibt das Menü für Rekursion aus
 */
 void fnMenueRekursion(void) {
@@ -201,8 +197,7 @@ void fnMenueRekursion(void) {
 
 
 /*
-Function: fnZinsberechnung
---------------------------
+fnZinsberechnung
 Berrechnet die Anlagedauer, um aus einer angegebenen Startsumme mit einem angegebenen Zinssatz eine gewünschte Endsumme zu erreichen.
 Die Berechnung findet mittels einer For-Schleife statt.
 */
@@ -265,8 +260,7 @@ void fnZinsberechnung(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: fnGauss
------------------
+fnGauss
 Addiert alle Zahlen von 1 bis gewünschtem Endwert.
 Die Berechnung findet mittels einer Formel statt.
 */
@@ -292,8 +286,7 @@ void fnGauss(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: fnLottozahlen
------------------------
+fnLottozahlen
 Gibt die Zahlen von 1 bis 49 aus. (7-Zeilig)
 */
 void fnLottozahlen(void) {
@@ -321,8 +314,7 @@ void fnLottozahlen(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: fnSchleifenWhile
---------------------------
+fnSchleifenWhile
 Führt eine While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.
 Ist die Zahl größer Null, wird die Schleife beendet.
 */
@@ -343,8 +335,7 @@ void fnSchleifenWhile(void) {
     system("Pause");//Beliebige Taste drücken... 
 }
 /*
-Function: fnSchleifenFor
-------------------------
+fnSchleifenFor
 Führt eine For-Schleife für eine variable Anzahl Wiederholungen mit einem zuvor festgelegten Startwert aus.
 */
 void fnSchleifenFor(void) {
@@ -366,8 +357,7 @@ void fnSchleifenFor(void) {
     system("Pause");//Beliebige Taste drücken... 
 }
 /*
-Function: fnSchleifenDoWhile
-----------------------------
+fnSchleifenDoWhile
 Führt eine Do-While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.
 Ist die Zahl größer Null, wird die Schleife beendet.
 */
@@ -388,8 +378,7 @@ void fnSchleifenDoWhile(void) {
     system("Pause");//Beliebige Taste drücken... 
 }
 /*
-Function: fnSterneEinzeilig
----------------------------
+fnSterneEinzeilig
 Gibt eine variable Anzahl an Sternen einzeilig aus.
 */
 void fnSterneEinzeilig(void) {
@@ -408,8 +397,7 @@ void fnSterneEinzeilig(void) {
     system("Pause");//Beliebige Taste drücken... 
 }
 /*
-Function: fnSterneMehrzeilig
-----------------------------
+fnSterneMehrzeilig
 Gibt eine variable Anzahl an Sternen pro Zeile aus.
 Die Anzahl der Zeilen kann gewählt werden.
 */
@@ -436,8 +424,7 @@ void fnSterneMehrzeilig(void) {
     system("Pause");//Beliebige Taste drücken... 
 }
 /*
-Function: fnDatentypen
-----------------------
+fnDatentypen
 Übersicht der in C verwendeten Datentypen.
 */
 void fnDatentypen(void) {
@@ -473,8 +460,7 @@ void fnDatentypen(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: fnBitByte
--------------------
+fnBitByte
 Rechnet Byte in Bit um und gibt weitere Informationen aus.
 */
 void fnBitByte(void) {
@@ -499,8 +485,7 @@ void fnBitByte(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: fnRekursionDirekt
----------------------------
+fnRekursionDirekt
 Berechnet die x-te potenz von 2.
 Maximalwert für x ist 62, da ansonsten das Ergebnis nicht darstellbar ist (long long int)
 */
@@ -523,8 +508,7 @@ void fnRekursionDirekt(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: fnRekursionDirekt
----------------------------
+fnRekursionDirekt
 Führt die Funktion ja() oder nein() mit einem beliebigen Startwert aus.
 ja() und nein() rufen sich gegenseitig auf.
 */
@@ -553,8 +537,7 @@ void fnRekursionIndirekt(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: fnZeiger
-------------------
+fnZeiger
 Tauscht den Zeiger von 2 Variablen.
 */
 void fnZeiger(void) {
@@ -577,8 +560,7 @@ void fnZeiger(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: fnNotendurchschnitt
------------------------------
+fnNotendurchschnitt
 Berechnet den Notendurchschnitt einer beliebigen Anzahl an Noten (max. 100).
 */
 void fnNotendurchschnitt(void) {
@@ -607,8 +589,7 @@ void fnNotendurchschnitt(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: fnStundenplan
------------------------
+fnStundenplan
 Stundenplan der E1FI1 (1. Halbjahr)
 */
 void fnStundenplan(void) {
@@ -647,8 +628,7 @@ void fnStundenplan(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-Function: swap
------------------------
+swap
 Tauscht den Zeiger von 2 Variablen.
 
 a:              (int*) Zeiger der Variable a
@@ -661,8 +641,7 @@ void swap(int* a, int* b)
     *b = tmp;
 }
 /*
-Function: durchschnitt
------------------------
+durchschnitt
 Berechnet den Durschnitt der Elemente eines Vektors
 
 vektor:         (double)    Vektor mit zu berechnenden Werten
@@ -678,8 +657,7 @@ double durchschnitt(double vektor[], int anzahl) {
     return summe / anzahl;
 }
 /*
-Function: ja
------------------------
+ja
 Ruft die Funktion nein() mit Startwert -1 auf.
 
 n:              (int)       Startwert
@@ -692,8 +670,7 @@ void ja(int n) {
     }
 }
 /*
-Function: nein
------------------------
+nein
 Ruft die Funktion ja() mit Startwert -1 auf.
 
 n:              (int)       Startwert
@@ -706,8 +683,7 @@ void nein(int n) {
     }
 }
 /*
-Function: zweiHoch
------------------------
+zweiHoch
 Ermittelt die x-te Potenz von 2 mittels direkter Rekursion
 
 zahl:           (int)       Potenz
