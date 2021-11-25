@@ -441,7 +441,7 @@ void fnRekursionDirekt(void) {
         }
         printf("2^");
         scanf_s("%i", &zahl);//Zahl abfragen
-    } while (zahl > 62 || zahl < -62);//zahl darf maximal 62 Betragen, da sonst Ergebnis nicht darstellbar
+    } while (zahl > 62 || zahl < 0);//zahl darf maximal 62 Betragen, da sonst Ergebnis nicht darstellbar
     printf("Ergebnis: %lld\n\n", zweiHoch(zahl));
     system("Pause");//Beliebige Taste drücken...
 }
@@ -457,17 +457,25 @@ void fnRekursionIndirekt(void) {
     do {
         CLEAR();
         printf(GELB("Indirekte Rekursion:\n"));
-        printf("1. Ja\n");
-        printf("2. Nein\n");
+        printf("1. ja()\n");
+        printf("2. nein()\n");
         printf("Welche funktion soll aufgerufen werden?: ");
         scanf_s("%i", &funktion);//Funktion abfragen
     } while (funktion < 1 || funktion > 2);//solange auswahl nicht 1 oder 2 ist
-    printf("Mit welchem Startwert soll die Funktion aufgerufen werden?: ");
-    scanf_s("%i", &zahl);//Wert abfragen
     if (funktion == 1) {//auswahl JA
+        CLEAR();
+        printf(GELB("Indirekte Rekursion:\n"));
+        printf("Welche funktion soll aufgerufen werden?: ja()\n");
+        printf("Startwert f\x81r ja(): ");
+        scanf_s("%i", &zahl);//Wert abfragen
         ja(zahl);
     }
     else {//auswahl NEIN
+        CLEAR();
+        printf(GELB("Indirekte Rekursion:\n"));
+        printf("Welche funktion soll aufgerufen werden?: nein()\n");
+        printf("Startwert f\x81r nein(): ");
+        scanf_s("%i", &zahl);//Wert abfragen
         nein(zahl);
     }
     printf("\n");
