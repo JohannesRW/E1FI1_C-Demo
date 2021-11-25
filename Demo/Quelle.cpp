@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
-#include <math.h> //z.B. für runden von kommazahlen (Zinsberechnung roundf())
+#include <stdio.h>      /*Standard In- And Output*/
+#include <stdlib.h>     /*Standard Library*/
+#include <conio.h>      /*Console Input/Output*/
+#include <math.h>       /*Math Library*/
 
 #define ROT(string) "\x1b[91m" string "\x1b[0m"     //rote schrift
 #define GELB(string) "\x1b[93m" string "\x1b[0m"    //gelbe schrift
