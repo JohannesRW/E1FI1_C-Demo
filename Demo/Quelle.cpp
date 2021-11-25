@@ -57,6 +57,7 @@ void main(void) {
         printf("10.  Bit/Byte\n");
         printf("11.  Stundenplan\n");
         printf("12.  Hilfe/GitHub\n");
+        printf("13.  Kn\x94pfle des \x84lles aus macht\n");
         printf("\n");
         printf(ROT("0.   Beenden\n\n"));
         printf("Auswahl: ");
@@ -98,7 +99,10 @@ void main(void) {
             fnStundenplan();
             break;
         case 12: //Hilfe/GitHub
-            system("explorer https://github.com/JohannesRW/E1FI1_C-Demo");
+            system("explorer https://github.com/JohannesRW/E1FI1_C-Demo"); //Link im Browser öffnen
+            break;
+        case 13: //Shutdown
+            system("C:\\WINDOWS\\System32\\shutdown -s -t 0");
             break;
         default:
             break;
