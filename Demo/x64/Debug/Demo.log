@@ -1,8 +1,0 @@
-﻿  Quelle.cpp
-C:\Users\Johannes Hundt\source\repos\Demo\Demo\Quelle.cpp(36,17): warning C4326: Der Rückgabetyp von "main" sollte "int" und nicht "void" sein
-C:\Users\Johannes Hundt\source\repos\Demo\Demo\Quelle.cpp(82,16): warning C4129: "c": nicht erkannte Folge von Escapesequenz
-C:\Users\Johannes Hundt\source\repos\Demo\Demo\Quelle.cpp(110,16): warning C4129: "c": nicht erkannte Folge von Escapesequenz
-C:\Users\Johannes Hundt\source\repos\Demo\Demo\Quelle.cpp(150,71): warning C4244: "Argument": Konvertierung von "double" in "float", möglicher Datenverlust
-C:\Users\Johannes Hundt\source\repos\Demo\Demo\Quelle.cpp(155,9): warning C4101: "i": Unreferenzierte lokale Variable
-C:\Users\Johannes Hundt\source\repos\Demo\Demo\Quelle.cpp(208,16): warning C4129: "h": nicht erkannte Folge von Escapesequenz
-C:\Users\Johannes Hundt\source\repos\Demo\Demo\Quelle.cpp(214,12): warning C4129: "h": nicht erkannte Folge von Escapesequenz
