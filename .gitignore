@@ -1,6 +1,7 @@
 #Visual Studio
 .vs/
 x64/
+Demo/x64
 *.tlog
 *.log
 
