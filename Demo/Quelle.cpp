@@ -441,7 +441,7 @@ void fnRekursionDirekt(void) {
         }
         printf("2^");
         scanf_s("%i", &zahl);//Zahl abfragen
-    } while (zahl > 62 || zahl < 0);//zahl darf maximal 62 Betragen, da sonst Ergebnis nicht darstellbar
+    } while (zahl > 62 || zahl < -62);//zahl darf maximal 62 Betragen, da sonst Ergebnis nicht darstellbar
     printf("Ergebnis: %lld\n\n", zweiHoch(zahl));
     system("Pause");//Beliebige Taste drücken...
 }
@@ -690,6 +690,7 @@ zahl:           (int)       Potenz
 returns:        (long long int) 2^x
 */
 long long int zweiHoch(int zahl) {
+    if (zahl < 0) { return 0; } //TODO: minuspotenz
     if (zahl == 0) { return 1;}//beendet die rekursive Schleife, wenn bei 2^0 angekommen.
     return 2 * zweiHoch(zahl - 1);//magic
 }
