@@ -627,7 +627,6 @@ void fnStundenplan(void) {
 }
 
 
-
 /*
 swap
 Tauscht den Zeiger von 2 Variablen.
