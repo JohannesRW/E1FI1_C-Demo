@@ -1,4 +1,7 @@
 # E1FI1_C-Demo
+Erstellt mit Microsoft Visual Studio Community 2022 (64-Bit)\
+Version 17.0.1
+
 ## Schleifen
 #### While
 Führt eine While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.\
