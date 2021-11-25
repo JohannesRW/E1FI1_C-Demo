@@ -57,7 +57,7 @@ void main(void) {
         printf("10.  Bit/Byte\n");
         printf("11.  Stundenplan\n");
         printf("12.  Hilfe/GitHub\n");
-        printf("13.  Kn\x94pfle des \x84lles aus macht\n");
+        printf("13.  Spezial Kn\x94pfle\n");
         printf("\n");
         printf(ROT("0.   Beenden\n\n"));
         printf("Auswahl: ");
