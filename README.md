@@ -7,7 +7,7 @@ Version 17.0.1
 Führt eine While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.\
 Ist die Zahl größer Null, wird die Schleife beendet.
 #### For
-Führt eine For-Schleife für eine variable Anzahl Wiederholungen aus, mit einem zuvor festgelegten Startwert.
+Führt eine For-Schleife für eine variable Anzahl Wiederholungen mit einem zuvor festgelegten Startwert aus.
 #### Do While
 Führt eine Do-While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.\
 Ist die Zahl größer Null, wird die Schleife beendet.
@@ -15,7 +15,7 @@ Ist die Zahl größer Null, wird die Schleife beendet.
 #### Einzeilig
 Gibt eine variable Anzahl an Sternen einzeilig aus.
 #### Mehrzeilig
-Gibt eine variable Anzahl an Sternen aus.\
+Gibt eine variable Anzahl an Sternen pro Zeile aus.\
 Die Anzahl der Zeilen kann gewählt werden.
 ## Zinsberechnung
 Berrechnet die Anlagedauer, um aus einer angegebenen Startsumme mit einem angegebenen Zinssatz eine gewünschte Endsumme zu erreichen.\
