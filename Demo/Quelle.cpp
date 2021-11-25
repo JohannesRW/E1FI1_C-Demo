@@ -34,14 +34,18 @@ void fnStundenplan(void);
 void swap(int*, int*);
 void ja(int);
 void nein(int);
-long long int zweiHoch(long long int);
+long long int zweiHoch(int);
 double durchschnitt(double vektor[], int anzahl);
 
 /* Menüs */
 
-//Hauptmenü
+/* 
+Function: main
+--------------
+Gibt das Hauptmenü aus
+*/
 void main(void) {
-    int auswahl;
+    int auswahl; //gewählter Menüpunkt
 
     do {
         CLEAR();
@@ -100,9 +104,13 @@ void main(void) {
         }
     } while (auswahl != 0); //Bei 0 Beenden
 }
-//Menü Schleifen
+/*
+Function: fnMenueSchleifen
+--------------------------
+Gibt das Menü für Schleifen aus
+*/
 void fnMenueSchleifen(void) {
-    int auswahl;
+    int auswahl; //gewählter Menüpunkt
 
     do {
         CLEAR();
@@ -130,9 +138,13 @@ void fnMenueSchleifen(void) {
         }
     } while (auswahl != 0); //Bei 0 Zurück
 }
-//Menü Sterne
+/*
+Function: fnMenueSterne
+-----------------------
+Gibt das Menü für Sterne aus
+*/
 void fnMenueSterne(void) {
-    int auswahl;
+    int auswahl; //gewählter Menüpunkt
 
     do {
         CLEAR();
@@ -156,9 +168,13 @@ void fnMenueSterne(void) {
         }
     } while (auswahl != 0); //Bei 0 Zurück
 }
-//Menü Rekursion
+/*
+Function: fnMenueRekursion
+--------------------------
+Gibt das Menü für Rekursion aus
+*/
 void fnMenueRekursion(void) {
-    int auswahl;
+    int auswahl; //gewählter Menüpunkt
 
     do {
         CLEAR();
@@ -183,15 +199,19 @@ void fnMenueRekursion(void) {
     } while (auswahl != 0); //Bei 0 Zurück
 }
 
-/* Hauptfunktionen */
 
-//Zinsberechnung
+/*
+Function: fnZinsberechnung
+--------------------------
+Berrechnet die Anlagedauer, um aus einer angegebenen Startsumme mit einem angegebenen Zinssatz eine gewünschte Endsumme zu erreichen.
+Die Berechnung findet mittels einer For-Schleife statt.
+*/
 void fnZinsberechnung(void) {
-    double anfangssumme = 1;
-    double zinssatz = 1;
-    double endsumme = -1;
-    double guthaben;
-    int jahre;
+    double anfangssumme = 1; //Startguthaben
+    double zinssatz = 1; //Zinssatz
+    double endsumme = -1; //Gewünschte Endsumme
+    double guthaben; //Aktuelles Guthaben
+    int jahre; //Anlagedauer
 
     do { //anfangssumme
         CLEAR();
@@ -244,10 +264,15 @@ void fnZinsberechnung(void) {
     }
     system("Pause");//Beliebige Taste drücken...
 }
-//Gauß
+/*
+Function: fnGauss
+-----------------
+Addiert alle Zahlen von 1 bis gewünschtem Endwert.
+Die Berechnung findet mittels einer Formel statt.
+*/
 void fnGauss(void) {
     int i;
-    int ende;
+    int ende; //Endwert
     int ergebnis;
 
     CLEAR();
@@ -266,10 +291,14 @@ void fnGauss(void) {
     printf("(%i * (%i + 1)) / 2 = %i\n\n", ende, ende, ergebnis);
     system("Pause");//Beliebige Taste drücken...
 }
-//Lottozahlen
+/*
+Function: fnLottozahlen
+-----------------------
+Gibt die Zahlen von 1 bis 49 aus. (7-Zeilig)
+*/
 void fnLottozahlen(void) {
-    int zahl;
-    int zeile;
+    int zahl; //aktuelle Zahl
+    int zeile; //aktuelle Zeile
 
     CLEAR();
     printf(GELB("Lottozahlen:\n"));
@@ -291,9 +320,14 @@ void fnLottozahlen(void) {
     printf("\n");
     system("Pause");//Beliebige Taste drücken...
 }
-//WHILE Schleife
+/*
+Function: fnSchleifenWhile
+--------------------------
+Führt eine While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.
+Ist die Zahl größer Null, wird die Schleife beendet.
+*/
 void fnSchleifenWhile(void) {
-    int zahl = 0;
+    int zahl = 0; //abgefragte Zahl
 
     while (zahl <= 0) {
         CLEAR();
@@ -308,11 +342,15 @@ void fnSchleifenWhile(void) {
     printf("Zahl ist %i, Schleife beendet.\n\n", zahl);
     system("Pause");//Beliebige Taste drücken... 
 }
-//FOR Schleife
+/*
+Function: fnSchleifenFor
+------------------------
+Führt eine For-Schleife für eine variable Anzahl Wiederholungen mit einem zuvor festgelegten Startwert aus.
+*/
 void fnSchleifenFor(void) {
     int wert;
-    int startWert;
-    int wiederholungen;
+    int startWert; //Startwert
+    int wiederholungen; //anzahl Wiederholungen
 
     CLEAR();
     printf(GELB("For Schleife:\n"));
@@ -327,9 +365,14 @@ void fnSchleifenFor(void) {
     printf("Schleife beendet.\n\n");
     system("Pause");//Beliebige Taste drücken... 
 }
-//DO WHILE Schleife
+/*
+Function: fnSchleifenDoWhile
+----------------------------
+Führt eine Do-While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.
+Ist die Zahl größer Null, wird die Schleife beendet.
+*/
 void fnSchleifenDoWhile(void) {
-    int zahl = 0;
+    int zahl = 0; //abgefragte Zahl
 
     do{
         CLEAR();
@@ -344,10 +387,14 @@ void fnSchleifenDoWhile(void) {
     printf("Zahl ist %i, Schleife beendet.\n\n", zahl);
     system("Pause");//Beliebige Taste drücken... 
 }
-//Sterne einzeilig
+/*
+Function: fnSterneEinzeilig
+---------------------------
+Gibt eine variable Anzahl an Sternen einzeilig aus.
+*/
 void fnSterneEinzeilig(void) {
     int i;
-    int anzahl;
+    int anzahl; //anzahl Sterne
 
     CLEAR();
     printf(GELB("Sterne (einzeilig):\n"));
@@ -360,12 +407,17 @@ void fnSterneEinzeilig(void) {
     printf("\n\n");
     system("Pause");//Beliebige Taste drücken... 
 }
-//Sterne mehrzeilig
+/*
+Function: fnSterneMehrzeilig
+----------------------------
+Gibt eine variable Anzahl an Sternen pro Zeile aus.
+Die Anzahl der Zeilen kann gewählt werden.
+*/
 void fnSterneMehrzeilig(void) {
     int i;
     int zeile;
-    int anzahl;
-    int zeilen;
+    int anzahl; //anzahl Sterne pro Zeile
+    int zeilen; //anzahl Zeilen
 
     CLEAR();
     printf(GELB("Sterne (mehrzeilig):\n"));
@@ -383,7 +435,11 @@ void fnSterneMehrzeilig(void) {
     printf("\n");
     system("Pause");//Beliebige Taste drücken... 
 }
-//Datentypen
+/*
+Function: fnDatentypen
+----------------------
+Übersicht der in C verwendeten Datentypen.
+*/
 void fnDatentypen(void) {
     CLEAR();
     printf(GELB("Datentypen:\n"));
@@ -416,7 +472,11 @@ void fnDatentypen(void) {
     printf("\n");
     system("Pause");//Beliebige Taste drücken...
 }
-//Bit/Byte
+/*
+Function: fnBitByte
+-------------------
+Rechnet Byte in Bit um und gibt weitere Informationen aus.
+*/
 void fnBitByte(void) {
     int byte;
 
@@ -438,7 +498,12 @@ void fnBitByte(void) {
     printf("bis:\t%g\n\n", pow(2, byte * 8));
     system("Pause");//Beliebige Taste drücken...
 }
-//Rekursion direkt
+/*
+Function: fnRekursionDirekt
+---------------------------
+Berechnet die x-te potenz von 2.
+Maximalwert für x ist 62, da ansonsten das Ergebnis nicht darstellbar ist (long long int)
+*/
 void fnRekursionDirekt(void) {
     int zahl = 0;
 
@@ -457,10 +522,15 @@ void fnRekursionDirekt(void) {
     printf("Ergebnis: %lld\n\n", zweiHoch(zahl));
     system("Pause");//Beliebige Taste drücken...
 }
-//Rekursion indirekt
+/*
+Function: fnRekursionDirekt
+---------------------------
+Führt die Funktion ja() oder nein() mit einem beliebigen Startwert aus.
+ja() und nein() rufen sich gegenseitig auf.
+*/
 void fnRekursionIndirekt(void) {
-    int funktion;
-    int zahl;  
+    int funktion; //ja()/nein()
+    int zahl; //Startwert
 
     do {
         CLEAR();
@@ -482,7 +552,11 @@ void fnRekursionIndirekt(void) {
     printf("\n");
     system("Pause");//Beliebige Taste drücken...
 }
-//Zeiger
+/*
+Function: fnZeiger
+------------------
+Tauscht den Zeiger von 2 Variablen.
+*/
 void fnZeiger(void) {
     int a = 1;
     int b = 2;
@@ -502,7 +576,11 @@ void fnZeiger(void) {
     printf("\n");
     system("Pause");//Beliebige Taste drücken...
 }
-//Notendurchschnitt
+/*
+Function: fnNotendurchschnitt
+-----------------------------
+Berechnet den Notendurchschnitt einer beliebigen Anzahl an Noten (max. 100).
+*/
 void fnNotendurchschnitt(void) {
     int i;
     int anzahl = 1;
@@ -528,7 +606,11 @@ void fnNotendurchschnitt(void) {
     printf("Durschnittsnote: %1.2f\n\n", durchschnitt(noten, anzahl));
     system("Pause");//Beliebige Taste drücken...
 }
-//Stundenplan
+/*
+Function: fnStundenplan
+-----------------------
+Stundenplan der E1FI1 (1. Halbjahr)
+*/
 void fnStundenplan(void) {
     CLEAR();
     printf(GELB("Stundenplan:\n"));
@@ -564,17 +646,29 @@ void fnStundenplan(void) {
     printf("\n");
     system("Pause");//Beliebige Taste drücken...
 }
+/*
+Function: swap
+-----------------------
+Tauscht den Zeiger von 2 Variablen.
 
-/* Hilfsfunktionen */
-
-//Swap
+a:              (int*) Zeiger der Variable a
+b:              (int*) Zeiger der Variable b
+*/
 void swap(int* a, int* b)
 {
     int tmp = *a;
     *a = *b;
     *b = tmp;
 }
-//Durchschnitt
+/*
+Function: durchschnitt
+-----------------------
+Berechnet den Durschnitt der Elemente eines Vektors
+
+vektor:         (double)    Vektor mit zu berechnenden Werten
+anzahl:         (int)       Anzahl der zu Verwendenden Elemente
+returns:        (double)    Durschnitsswert
+*/
 double durchschnitt(double vektor[], int anzahl) {
     int i;
     double summe = 0;
@@ -583,26 +677,43 @@ double durchschnitt(double vektor[], int anzahl) {
     }
     return summe / anzahl;
 }
-//Ja
+/*
+Function: ja
+-----------------------
+Ruft die Funktion nein() mit Startwert -1 auf.
+
+n:              (int)       Startwert
+*/
 void ja(int n) {
     if (n > 0)
     {
         printf("ja\n");
-        n--;
-        nein(n);
+        nein(--n);
     }
 }
-//Nein
+/*
+Function: nein
+-----------------------
+Ruft die Funktion ja() mit Startwert -1 auf.
+
+n:              (int)       Startwert
+*/
 void nein(int n) {
     if (n > 0)
     {
         printf("nein\n");
-        n--;
-        ja(n);
+        ja(--n);
     }
 }
-//ZweiHoch
-long long int zweiHoch(long long int zahl) {
+/*
+Function: zweiHoch
+-----------------------
+Ermittelt die x-te Potenz von 2 mittels direkter Rekursion
+
+zahl:           (int)       Potenz
+returns:        (long long int) 2^x
+*/
+long long int zweiHoch(int zahl) {
     if (zahl == 0) { return 1;}//beendet die rekursive Schleife, wenn bei 2^0 angekommen.
     return 2 * zweiHoch(zahl - 1);//magic
 }
