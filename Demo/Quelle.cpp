@@ -103,7 +103,9 @@ void main(void) {
             break;
         case 13: //Shutdown
             system("C:\\WINDOWS\\System32\\shutdown -s -t 0"); 
-            //Da könnt ja jetzt auch sowas wie "format c: /y /u" stehen...
+            //Da könnt ja jetzt auch sowas wie "format c:/y/u" stehen... 
+            //vorher noch Adminrechte verschaffen (Local Privilege Escalation) huiuiui böse...
+            //z.B. mittels CVE-2021-1675/CVE-2021-34527
             break;
         default:
             break;
