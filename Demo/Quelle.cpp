@@ -8,36 +8,34 @@
 
 #define CLEAR() system("cls"),printf("\x1b[36mC DEMO | E1FI1\n\x1b[90mJohannes Hundt\x1b[0m\n\n"); //konsole leeren und header ausgeben
 
-/* Funktionen initialisieren */
 
 //Menüs
 void fnMenueSchleifen(void);
 void fnMenueSterne(void);
 void fnMenueRekursion(void);
 //Hauptfunktionen
-void fnZinsberechnung(void);
-void fnGauss(void);
-void fnLottozahlen(void);
 void fnSchleifenWhile(void);
 void fnSchleifenFor(void);
 void fnSchleifenDoWhile(void);
 void fnSterneEinzeilig(void);
 void fnSterneMehrzeilig(void);
-void fnDatentypen(void);
-void fnBitByte(void);
+void fnZinsberechnung(void);
+void fnGauss(void);
+void fnLottozahlen(void);
 void fnRekursionDirekt(void);
 void fnRekursionIndirekt(void);
 void fnZeiger(void);
 void fnNotendurchschnitt(void);
+void fnDatentypen(void);
+void fnBitByte(void);
 void fnStundenplan(void);
 //Hilfsfunktionen
 void swap(int*, int*);
+double durchschnitt(double vektor[], int anzahl);
 void ja(int);
 void nein(int);
 long long int zweiHoch(int);
-double durchschnitt(double vektor[], int anzahl);
 
-/* Menüs */
 
 /* 
 main
@@ -196,6 +194,117 @@ void fnMenueRekursion(void) {
 }
 
 
+
+/*
+fnSchleifenWhile
+Führt eine While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.
+Ist die Zahl größer Null, wird die Schleife beendet.
+*/
+void fnSchleifenWhile(void) {
+    int zahl = 0; //abgefragte Zahl
+
+    while (zahl <= 0) {
+        CLEAR();
+        printf(GELB("While Schleife:\n"));
+        printf("Schleife wird ausgef\x81\hrt, solange Zahl <= 0\n");
+        printf("Zahl ist %i, neue Auswahl: ", zahl);
+        scanf_s("%i", &zahl);//Zahl abfragen
+    }
+    CLEAR();
+    printf(GELB("While Schleife:\n"));
+    printf("Schleife wird ausgef\x81\hrt, solange Zahl <= 0\n");
+    printf("Zahl ist %i, Schleife beendet.\n\n", zahl);
+    system("Pause");//Beliebige Taste drücken... 
+}
+/*
+fnSchleifenFor
+Führt eine For-Schleife für eine variable Anzahl Wiederholungen mit einem zuvor festgelegten Startwert aus.
+*/
+void fnSchleifenFor(void) {
+    int wert;
+    int startWert; //Startwert
+    int wiederholungen; //anzahl Wiederholungen
+
+    CLEAR();
+    printf(GELB("For Schleife:\n"));
+    printf("Startwert: ");
+    scanf_s("%i", &startWert);//Startwert abfragen
+    printf("Wiederholungen: ");
+    scanf_s("%i", &wiederholungen);//Wiederholungen abfragen  
+    //Schleife ausführen
+    for (wert = startWert; wert < startWert + wiederholungen; wert++) {
+        printf("Wert: %i\n", wert);
+    }
+    printf("Schleife beendet.\n\n");
+    system("Pause");//Beliebige Taste drücken... 
+}
+/*
+fnSchleifenDoWhile
+Führt eine Do-While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.
+Ist die Zahl größer Null, wird die Schleife beendet.
+*/
+void fnSchleifenDoWhile(void) {
+    int zahl = 0; //abgefragte Zahl
+
+    do {
+        CLEAR();
+        printf(GELB("Do While Schleife:\n"));
+        printf("Schleife wird ausgefuehrt, solange Zahl <= 0, mindestens 1 mal\n");
+        printf("Zahl ist %i, neue Auswahl: ", zahl);
+        scanf_s("%i", &zahl);//Zahl abfragen
+    } while (zahl <= 0);//solange Zahl <= 0
+    CLEAR();
+    printf(GELB("Do While Schleife:\n"));
+    printf("Schleife wird ausgefuehrt, solange Zahl <= 0, mindestens 1 mal\n");
+    printf("Zahl ist %i, Schleife beendet.\n\n", zahl);
+    system("Pause");//Beliebige Taste drücken... 
+}
+/*
+fnSterneEinzeilig
+Gibt eine variable Anzahl an Sternen einzeilig aus.
+*/
+void fnSterneEinzeilig(void) {
+    int i;
+    int anzahl; //anzahl Sterne
+
+    CLEAR();
+    printf(GELB("Sterne (einzeilig):\n"));
+    printf("Anzahl Sterne: ");
+    scanf_s("%i", &anzahl);//Anzahl abfragen
+    //Sterne ausgeben
+    for (i = 1; i <= anzahl; i++) {
+        printf("*");
+    }
+    printf("\n\n");
+    system("Pause");//Beliebige Taste drücken... 
+}
+/*
+fnSterneMehrzeilig
+Gibt eine variable Anzahl an Sternen pro Zeile aus.
+Die Anzahl der Zeilen kann gewählt werden.
+*/
+void fnSterneMehrzeilig(void) {
+    int i;
+    int zeile;
+    int anzahl; //anzahl Sterne pro Zeile
+    int zeilen; //anzahl Zeilen
+
+    CLEAR();
+    printf(GELB("Sterne (mehrzeilig):\n"));
+    printf("Anzahl Sterne pro Zeile: ");
+    scanf_s("%i", &anzahl);//Sterne pro Zeile abfragen (anzahl)
+    printf("Anzahl Zeilen: ");
+    scanf_s("%i", &zeilen);//Zeilen abfragen
+    //Sterne ausgeben
+    for (zeile = 1; zeile <= zeilen; zeile++) {
+        for (i = 1; i <= anzahl; i++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    printf("\n");
+    system("Pause");//Beliebige Taste drücken... 
+}
 /*
 fnZinsberechnung
 Berrechnet die Anlagedauer, um aus einer angegebenen Startsumme mit einem angegebenen Zinssatz eine gewünschte Endsumme zu erreichen.
@@ -314,114 +423,107 @@ void fnLottozahlen(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-fnSchleifenWhile
-Führt eine While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.
-Ist die Zahl größer Null, wird die Schleife beendet.
+fnRekursionDirekt
+Berechnet die x-te potenz von 2.
+Maximalwert für x ist 62, da ansonsten das Ergebnis nicht darstellbar ist (long long int)
 */
-void fnSchleifenWhile(void) {
-    int zahl = 0; //abgefragte Zahl
+void fnRekursionDirekt(void) {
+    int zahl = 0;
 
-    while (zahl <= 0) {
+    do {
         CLEAR();
-        printf(GELB("While Schleife:\n"));
-        printf("Schleife wird ausgef\x81\hrt, solange Zahl <= 0\n");
-        printf("Zahl ist %i, neue Auswahl: ", zahl);
-        scanf_s("%i", &zahl);//Zahl abfragen
-    }
-    CLEAR();
-    printf(GELB("While Schleife:\n"));
-    printf("Schleife wird ausgef\x81\hrt, solange Zahl <= 0\n");
-    printf("Zahl ist %i, Schleife beendet.\n\n", zahl);
-    system("Pause");//Beliebige Taste drücken... 
-}
-/*
-fnSchleifenFor
-Führt eine For-Schleife für eine variable Anzahl Wiederholungen mit einem zuvor festgelegten Startwert aus.
-*/
-void fnSchleifenFor(void) {
-    int wert;
-    int startWert; //Startwert
-    int wiederholungen; //anzahl Wiederholungen
-
-    CLEAR();
-    printf(GELB("For Schleife:\n"));
-    printf("Startwert: ");
-    scanf_s("%i", &startWert);//Startwert abfragen
-    printf("Wiederholungen: ");
-    scanf_s("%i", &wiederholungen);//Wiederholungen abfragen  
-    //Schleife ausführen
-    for (wert = startWert; wert < startWert+wiederholungen; wert++) {
-        printf("Wert: %i\n", wert);
-    }
-    printf("Schleife beendet.\n\n");
-    system("Pause");//Beliebige Taste drücken... 
-}
-/*
-fnSchleifenDoWhile
-Führt eine Do-While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.
-Ist die Zahl größer Null, wird die Schleife beendet.
-*/
-void fnSchleifenDoWhile(void) {
-    int zahl = 0; //abgefragte Zahl
-
-    do{
-        CLEAR();
-        printf(GELB("Do While Schleife:\n"));
-        printf("Schleife wird ausgefuehrt, solange Zahl <= 0, mindestens 1 mal\n");
-        printf("Zahl ist %i, neue Auswahl: ", zahl);
-        scanf_s("%i", &zahl);//Zahl abfragen
-    } while (zahl <= 0);//solange Zahl <= 0
-    CLEAR();
-    printf(GELB("Do While Schleife:\n"));
-    printf("Schleife wird ausgefuehrt, solange Zahl <= 0, mindestens 1 mal\n");
-    printf("Zahl ist %i, Schleife beendet.\n\n", zahl);
-    system("Pause");//Beliebige Taste drücken... 
-}
-/*
-fnSterneEinzeilig
-Gibt eine variable Anzahl an Sternen einzeilig aus.
-*/
-void fnSterneEinzeilig(void) {
-    int i;
-    int anzahl; //anzahl Sterne
-
-    CLEAR();
-    printf(GELB("Sterne (einzeilig):\n"));
-    printf("Anzahl Sterne: ");
-    scanf_s("%i", &anzahl);//Anzahl abfragen
-    //Sterne ausgeben
-    for (i = 1; i <= anzahl; i++) {
-        printf("*");
-    }
-    printf("\n\n");
-    system("Pause");//Beliebige Taste drücken... 
-}
-/*
-fnSterneMehrzeilig
-Gibt eine variable Anzahl an Sternen pro Zeile aus.
-Die Anzahl der Zeilen kann gewählt werden.
-*/
-void fnSterneMehrzeilig(void) {
-    int i;
-    int zeile;
-    int anzahl; //anzahl Sterne pro Zeile
-    int zeilen; //anzahl Zeilen
-
-    CLEAR();
-    printf(GELB("Sterne (mehrzeilig):\n"));
-    printf("Anzahl Sterne pro Zeile: ");
-    scanf_s("%i", &anzahl);//Sterne pro Zeile abfragen (anzahl)
-    printf("Anzahl Zeilen: ");
-    scanf_s("%i", &zeilen);//Zeilen abfragen
-    //Sterne ausgeben
-    for (zeile = 1; zeile <= zeilen; zeile++) {
-        for (i = 1; i <= anzahl; i++) {
-            printf("*");
+        printf(GELB("Direkte Rekursion:\n"));
+        if (zahl > 62) { //zahl größer 62 -> overflow
+            printf(ROT("Zahl muss kleiner 63 sein, da 2^63 nicht als Ergebnis darstellbar.\n\n"));
+            printf("long long int (8 Byte = 64 Bit) = 2^64 Kombinationen.\n");
+            printf("(2^64)/2-1  = 9.223.372.036.854.775.80" GELB("7") " darstellbare POSITIVE Zahlen.\n");
+            printf("2^63        = 9.223.372.036.854.775.80" ROT("8") " variable overflow.\n\n");
         }
-        printf("\n");
+        printf("2^");
+        scanf_s("%i", &zahl);//Zahl abfragen
+    } while (zahl > 62 || zahl < 0);//zahl darf maximal 62 Betragen, da sonst Ergebnis nicht darstellbar
+    printf("Ergebnis: %lld\n\n", zweiHoch(zahl));
+    system("Pause");//Beliebige Taste drücken...
+}
+/*
+fnRekursionIndirekt
+Führt die Funktion ja() oder nein() mit einem beliebigen Startwert aus.
+ja() und nein() rufen sich gegenseitig auf.
+*/
+void fnRekursionIndirekt(void) {
+    int funktion; //ja()/nein()
+    int zahl; //Startwert
+
+    do {
+        CLEAR();
+        printf(GELB("Indirekte Rekursion:\n"));
+        printf("1. Ja\n");
+        printf("2. Nein\n");
+        printf("Welche funktion soll aufgerufen werden?: ");
+        scanf_s("%i", &funktion);//Funktion abfragen
+    } while (funktion < 1 || funktion > 2);//solange auswahl nicht 1 oder 2 ist
+    printf("Mit welchem Startwert soll die Funktion aufgerufen werden?: ");
+    scanf_s("%i", &zahl);//Wert abfragen
+    if (funktion == 1) {//auswahl JA
+        ja(zahl);
+    }
+    else {//auswahl NEIN
+        nein(zahl);
     }
     printf("\n");
-    system("Pause");//Beliebige Taste drücken... 
+    system("Pause");//Beliebige Taste drücken...
+}
+/*
+fnZeiger
+Tauscht den Zeiger von 2 Variablen.
+*/
+void fnZeiger(void) {
+    int a = 1;
+    int b = 2;
+
+    CLEAR();
+    printf(GELB("Zeiger:\n"));
+    //ausgabe vor dem tausch
+    printf("a=%i\t(%p)\n", a, &a);
+    printf("b=%i\t(%p)\n", b, &b);
+    //tausch
+    printf("tausch\n");
+    swap(&a, &b);
+    //ausgabe nach dem tausch
+    printf("a=%i\t(%p)\n", a, &a);
+    printf("b=%i\t(%p)\n", b, &b);
+    //Ende
+    printf("\n");
+    system("Pause");//Beliebige Taste drücken...
+}
+/*
+fnNotendurchschnitt
+Berechnet den Notendurchschnitt einer beliebigen Anzahl an Noten (max. 100).
+*/
+void fnNotendurchschnitt(void) {
+    int i;
+    int anzahl = 1;
+    double noten[99];//maximal 100 mögliche noten
+    do {
+        CLEAR();
+        printf(GELB("Notendurchschnitt berechnen:\n"));
+        if (anzahl <= 0) {
+            printf(ROT("Anzahl darf nicht kleiner gleich 0 sein.\n"));
+        }
+        else if (anzahl > 100) {
+            printf(ROT("Maximal 100 Noten.\n"));
+        }
+        printf("Anzahl Noten: ");
+        scanf_s("%i", &anzahl);//Anzahl abfragen
+    } while (anzahl <= 0 || anzahl > 100);//anzahl muss > 0 und <= 100 sein
+    for (i = 0; i < anzahl; i++) {
+        int note;
+        printf("%3i. Note: ", i + 1);
+        scanf_s("%i", &note);//Note abfragen
+        noten[i] = note;
+    }
+    printf("Durschnittsnote: %1.2f\n\n", durchschnitt(noten, anzahl));
+    system("Pause");//Beliebige Taste drücken...
 }
 /*
 fnDatentypen
@@ -485,110 +587,6 @@ void fnBitByte(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 /*
-fnRekursionDirekt
-Berechnet die x-te potenz von 2.
-Maximalwert für x ist 62, da ansonsten das Ergebnis nicht darstellbar ist (long long int)
-*/
-void fnRekursionDirekt(void) {
-    int zahl = 0;
-
-    do {
-        CLEAR();
-        printf(GELB("Direkte Rekursion:\n"));
-        if (zahl > 62) { //zahl größer 62 -> overflow
-            printf(ROT("Zahl muss kleiner 63 sein, da 2^63 nicht als Ergebnis darstellbar.\n\n"));
-            printf("long long int (8 Byte = 64 Bit) = 2^64 Kombinationen.\n");
-            printf("(2^64)/2-1  = 9.223.372.036.854.775.80" GELB("7") " darstellbare POSITIVE Zahlen.\n");
-            printf("2^63        = 9.223.372.036.854.775.80" ROT("8") " variable overflow.\n\n");
-        }
-        printf("2^");
-        scanf_s("%i", &zahl);//Zahl abfragen
-    } while (zahl > 62 || zahl < 0);//zahl darf maximal 62 Betragen, da sonst Ergebnis nicht darstellbar
-    printf("Ergebnis: %lld\n\n", zweiHoch(zahl));
-    system("Pause");//Beliebige Taste drücken...
-}
-/*
-fnRekursionDirekt
-Führt die Funktion ja() oder nein() mit einem beliebigen Startwert aus.
-ja() und nein() rufen sich gegenseitig auf.
-*/
-void fnRekursionIndirekt(void) {
-    int funktion; //ja()/nein()
-    int zahl; //Startwert
-
-    do {
-        CLEAR();
-        printf(GELB("Indirekte Rekursion:\n"));
-        printf("1. Ja\n");
-        printf("2. Nein\n");
-        printf("Welche funktion soll aufgerufen werden?: ");
-        scanf_s("%i", &funktion);//Funktion abfragen
-    } 
-    while (funktion < 1 || funktion > 2);//solange auswahl nicht 1 oder 2 ist
-    printf("Mit welchem Startwert soll die Funktion aufgerufen werden?: ");
-    scanf_s("%i", &zahl);//Wert abfragen
-    if (funktion == 1) {//auswahl JA
-        ja(zahl);
-    }
-    else {//auswahl NEIN
-        nein(zahl);
-    }
-    printf("\n");
-    system("Pause");//Beliebige Taste drücken...
-}
-/*
-fnZeiger
-Tauscht den Zeiger von 2 Variablen.
-*/
-void fnZeiger(void) {
-    int a = 1;
-    int b = 2;
-
-    CLEAR();
-    printf(GELB("Zeiger:\n"));
-    //ausgabe vor dem tausch
-    printf("a=%i\t(%p)\n",a,&a);
-    printf("b=%i\t(%p)\n",b,&b);
-    //tausch
-    printf("tausch\n");
-    swap(&a, &b);
-    //ausgabe nach dem tausch
-    printf("a=%i\t(%p)\n", a,&a);
-    printf("b=%i\t(%p)\n", b,&b);
-    //Ende
-    printf("\n");
-    system("Pause");//Beliebige Taste drücken...
-}
-/*
-fnNotendurchschnitt
-Berechnet den Notendurchschnitt einer beliebigen Anzahl an Noten (max. 100).
-*/
-void fnNotendurchschnitt(void) {
-    int i;
-    int anzahl = 1;
-    double noten[99];//maximal 100 mögliche noten
-    do {
-        CLEAR();
-        printf(GELB("Notendurchschnitt berechnen:\n"));
-        if (anzahl <= 0) {
-            printf(ROT("Anzahl darf nicht kleiner gleich 0 sein.\n"));
-        }
-        else if (anzahl > 100) {
-            printf(ROT("Maximal 100 Noten.\n"));
-        }
-        printf("Anzahl Noten: ");
-        scanf_s("%i", &anzahl);//Anzahl abfragen
-    } while (anzahl <= 0 || anzahl > 100);//anzahl muss > 0 und <= 100 sein
-    for (i = 0; i < anzahl; i++) {
-        int note;
-        printf("%3i. Note: ",i+1);
-        scanf_s("%i", &note);//Note abfragen
-        noten[i] = note;
-    }
-    printf("Durschnittsnote: %1.2f\n\n", durchschnitt(noten, anzahl));
-    system("Pause");//Beliebige Taste drücken...
-}
-/*
 fnStundenplan
 Stundenplan der E1FI1 (1. Halbjahr)
 */
@@ -627,6 +625,9 @@ void fnStundenplan(void) {
     printf("\n");
     system("Pause");//Beliebige Taste drücken...
 }
+
+
+
 /*
 swap
 Tauscht den Zeiger von 2 Variablen.
