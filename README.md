@@ -2,6 +2,8 @@
 Erstellt mit Microsoft Visual Studio Community 2022 (64-Bit)\
 Version 17.0.1
 
+![image](https://user-images.githubusercontent.com/93385909/143418277-92cd15c9-2dcd-42ef-b025-3cd4e836bd5e.png)
+
 ## Schleifen
 #### While
 Führt eine While-Schleife aus, solange die abgefragte Zahl kleiner gleich 0 ist.\
@@ -23,6 +25,7 @@ Die Berechnung findet mittels einer For-Schleife statt.
 <pre><code>for (jahre = 0, guthaben = anfangssumme; guthaben < endsumme; jahre++) {
   guthaben += guthaben / 100 * zinssatz;
 }</code></pre>
+![image](https://user-images.githubusercontent.com/93385909/143417804-dcd8b197-bcdc-40ab-9172-f48455a6aec9.png)
 ## Gauß
 Addiert alle Zahlen von 1 bis gewünschtem Endwert.\
 Die Berechnung findet mittels einer Formel statt.
@@ -34,14 +37,8 @@ Alternativ könnte das Ergebnis mit einer For-Schleife ermittelt werden.
 }</code></pre>
 ## Lottozahlen
 Gibt die Zahlen von 1 bis 49 aus. (7-Zeilig)
-<pre><code> 1   2   3   4   5   6   7
- 8   9  10  11  12  13  14
-15  16  17  18  19  20  21
-22  23  24  25  26  27  28
-29  30  31  32  33  34  35
-36  37  38  39  40  41  42
-43  44  45  46  47  48  49
-</code></pre>
+
+![image](https://user-images.githubusercontent.com/93385909/143417967-18194d83-e49b-4d49-94a0-22c86b160dec.png)
 ## Rekursion
 Rekursive Funktionen sind sich selbst aufrufende Funktionen.
 #### direkte Rekursion (2^x)
