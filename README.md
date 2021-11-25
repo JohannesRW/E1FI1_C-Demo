@@ -2,7 +2,7 @@
 Erstellt mit Microsoft Visual Studio Community 2022 (64-Bit)\
 Version 17.0.1
 
-![image](https://user-images.githubusercontent.com/93385909/143418277-92cd15c9-2dcd-42ef-b025-3cd4e836bd5e.png)
+![image](https://user-images.githubusercontent.com/93385909/143472425-50b493b0-c5c2-4eaa-8534-d1e2c4dc4ccf.png)
 
 ## Schleifen
 #### While
