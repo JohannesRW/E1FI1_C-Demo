@@ -57,10 +57,12 @@ void main(void) {
         printf("9.   Datentypen\n");
         printf("10.  Bit/Byte\n");
         printf("11.  Stundenplan\n");
+        printf("12.  Hilfe/GitHub\n");
         printf("\n");
         printf(ROT("0.   Beenden\n\n"));
         printf("Auswahl: ");
         scanf_s("%i", &auswahl);//Auswahl abfragen
+
         switch (auswahl)
         {
         case 1: //Menü Schleifen
@@ -95,6 +97,9 @@ void main(void) {
             break;
         case 11: //Stundenplan
             fnStundenplan();
+            break;
+        case 12: //Hilfe/GitHub
+            system("explorer https://github.com/JohannesRW/E1FI1_C-Demo");
             break;
         default:
             break;

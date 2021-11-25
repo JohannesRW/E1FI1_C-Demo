@@ -57,3 +57,6 @@ Berechnet den Notendurchschnitt einer beliebigen Anzahl an Noten (max. 100).
 Rechnet Byte in Bit um und gibt weitere Informationen aus.
 ## Stundenplan
 Stundenplan der E1FI1 (1. Halbjahr)
+## Hilfe/GitHub
+Öffnet ein Browserfenster mit folgender Adresse:\
+>https://github.com/JohannesRW/E1FI1_C-Demo
