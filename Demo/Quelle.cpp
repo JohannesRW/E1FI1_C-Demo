@@ -1,11 +1,10 @@
 #include <stdio.h>      /*Standard In- And Output*/
 #include <stdlib.h>     /*Standard Library*/
-#include <conio.h>      /*Console and Port Input/Output*/
+#include <conio.h>      /*Console Input/Output*/
 #include <math.h>       /*Math Library*/
 
 #define ROT(string) "\x1b[91m" string "\x1b[0m"     //rote schrift
 #define GELB(string) "\x1b[93m" string "\x1b[0m"    //gelbe schrift
-
 #define CLEAR() system("cls"),printf("\x1b[36mC DEMO | E1FI1\n\x1b[90mJohannes Hundt\x1b[0m\n\n"); //konsole leeren und header ausgeben
 
 
