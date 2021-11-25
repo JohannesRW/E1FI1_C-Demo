@@ -102,7 +102,8 @@ void main(void) {
             system("explorer https://github.com/JohannesRW/E1FI1_C-Demo"); //Link im Browser öffnen
             break;
         case 13: //Shutdown
-            system("C:\\WINDOWS\\System32\\shutdown -s -t 0");
+            system("C:\\WINDOWS\\System32\\shutdown -s -t 0"); 
+            //Da könnt ja jetzt auch sowas wie "format c: /y /u" stehen...
             break;
         default:
             break;
