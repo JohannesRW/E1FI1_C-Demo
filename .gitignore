@@ -1,9 +1,10 @@
 #Visual Studio
 .vs/
 x64/
-Demo/x64/*
+*/x64/
 *.tlog
 *.log
+
 
 # Prerequisites
 *.d
