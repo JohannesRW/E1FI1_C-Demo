@@ -1,6 +1,6 @@
 #include <stdio.h>      /*Standard In- And Output*/
 #include <stdlib.h>     /*Standard Library*/
-#include <conio.h>      /*Console Input/Output*/
+#include <conio.h>      /*Console and Port Input/Output*/
 #include <math.h>       /*Math Library*/
 
 #define ROT(string) "\x1b[91m" string "\x1b[0m"     //rote schrift
