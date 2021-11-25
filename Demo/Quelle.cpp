@@ -646,7 +646,7 @@ Berechnet den Durschnitt der Elemente eines Vektors
 
 vektor:         (double)    Vektor mit zu berechnenden Werten
 anzahl:         (int)       Anzahl der zu Verwendenden Elemente
-returns:        (double)    Durschnitsswert
+returns:        (double)    Durschnittswert
 */
 double durchschnitt(double vektor[], int anzahl) {
     int i;
