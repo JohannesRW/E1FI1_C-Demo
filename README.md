@@ -68,4 +68,5 @@ Stundenplan der E1FI1 (1. Halbjahr)
 2 Spieler wählen eine Zahl.\
 Ist die Summe der Zahlen gerade, gewinnt der Spieler mit der kleineren Zahl.\
 Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl.\
-Bei Gleicher Zahl unentschieden.
+Bei Gleicher Zahl unentschieden.\
+Es wird gespielt bis ein Spieler 3 mal gewonnen hat.
