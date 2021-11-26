@@ -718,24 +718,38 @@ Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl
 Bei Gleicher Zahl Unentschieden
 */
 void fnKnobelspiel(void) {
-    int zahlSpieler_1 = 0;
-	int zahlSpieler_2 = 0;
+    int zahlSpieler_1 = 1;
+	int zahlSpieler_2 = 1;
+	int siegeSpieler1 = 0;
+	int siegeSpieler2 = 0;
+	do {
+	
+	
 	do{
 		CLEAR();
 		printf(GELB("Knobelspiel:\n"));
+		printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n",siegeSpieler1,siegeSpieler2);
 		printf(ROT("Spieler 1:\n"));
+		if(zahlSpieler_1 <= 0){
+			printf(ROT("Zahl muss groesser gleich 0 sein.\n"));
+		}
 		printf("Geben Sie eine Zahl ein: ");
 		scanf_s("%i", &zahlSpieler_1);//Zahl abfragen
-	} while (zahlSpieler_1 <= 0);
+	} while (zahlSpieler_1 <= 0); //Zahl muss größer 0 Sein.
 	do{
 		CLEAR();
 		printf(GELB("Knobelspiel:\n"));
+		printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n",siegeSpieler1,siegeSpieler2);
 		printf(ROT("Spieler 2:\n"));
+		if(zahlSpieler_2 <= 0){
+			printf(ROT("Zahl muss groesser gleich 0 sein.\n"));
+		}
 		printf("Geben Sie eine Zahl ein: ");
 		scanf_s("%i", &zahlSpieler_2);//Zahl abfragen
-	} while (zahlSpieler_2 <= 0);
+	} while (zahlSpieler_2 <= 0); //Zahl muss größer 0 Sein.
 	CLEAR();
 	printf(GELB("Knobelspiel:\n"));
+	printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n",siegeSpieler1,siegeSpieler2);
 
 	if(zahlSpieler_1 == zahlSpieler_2){ //unentschieden
 		printf("Unentschieden!");
@@ -743,20 +757,36 @@ void fnKnobelspiel(void) {
 	else if((zahlSpieler_1+zahlSpieler_2) % 2 == 0){//gerade
 		if(zahlSpieler_1 < zahlSpieler_2){
 			printf("Spieler 1 gewinnt!");
+			siegeSpieler1++;
 		}
 		else {
 			printf("Spieler 2 gewinnt!");
+			siegeSpieler2++;
 		}
 	}
 	else {//ungerade
 		if(zahlSpieler_1 > zahlSpieler_2){
 			printf("Spieler 1 gewinnt!");
+			siegeSpieler1++;
 		}
 		else {
 			printf("Spieler 2 gewinnt!");
+			siegeSpieler2++;
 		}
 	}
-	printf("\n");
+	printf("\n\n");
+    system("Pause");//Beliebige Taste drücken...
+	
+	} while(siegeSpieler1 < 3 && siegeSpieler2 < 3);
+	CLEAR();
+	printf(GELB("Knobelspiel:\n"));
+	if(siegeSpieler1 == 3){
+		printf("Spieler 1 gewinnt!");
+	}
+	else {
+		printf("Spieler 2 gewinnt!");
+	}
+	printf("\n\n");
     system("Pause");//Beliebige Taste drücken...
 }
 
