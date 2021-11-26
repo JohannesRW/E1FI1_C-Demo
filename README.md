@@ -19,6 +19,10 @@ Gibt eine variable Anzahl an Sternen einzeilig aus.
 #### Mehrzeilig
 Gibt eine variable Anzahl an Sternen pro Zeile aus.\
 Die Anzahl der Zeilen kann gewählt werden.
+#### Pyramide
+Gibt Sterne in Pyramidenform aus, Anzahl Zeilen ist wählbar.
+#### Dreieck
+Gibt Sterne in Dreieckform aus, Anzahl Zeilen ist wählbar.
 ## Zinsberechnung
 Berrechnet die Anlagedauer, um aus einer angegebenen Startsumme mit einem angegebenen Zinssatz eine gewünschte Endsumme zu erreichen.\
 Die Berechnung findet mittels einer For-Schleife statt.
