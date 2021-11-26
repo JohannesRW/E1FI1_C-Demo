@@ -596,13 +596,13 @@ void fnBitByte(void) {
     scanf_s("%i", &byte);//Byte abfragen
     //Textausgabe
     printf("%i Byte = %i Bit.\n",byte,byte*8);
-    printf("2^%i = %g m\x94gliche Kombinationen.\n\n",byte*8, zweiHoch(byte*8));
+    printf("2^%i = %lld m\x94gliche Kombinationen.\n\n",byte*8, zweiHoch(byte*8));
     //signed
-    printf("Signed:\nvon:\t%g\n",zweiHoch(byte * 8)/-2);
-    printf("bis:\t %g\n\n",zweiHoch(byte * 8)/2-1);
+    printf("Signed:\nvon:\t%lld\n",zweiHoch(byte * 8)/-2);
+    printf("bis:\t %lld\n\n",zweiHoch(byte * 8)/2-1);
     //unsigned
     printf("Unsigned:\nvon:\t0\n");
-    printf("bis:\t%g\n\n", zweiHoch(byte * 8));
+    printf("bis:\t%lld\n\n", zweiHoch(byte * 8));
     system("Pause");//Beliebige Taste drücken...
 }
 /*
