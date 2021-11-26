@@ -64,3 +64,8 @@ Stundenplan der E1FI1 (1. Halbjahr)
 ## Hilfe/GitHub
 Öffnet ein Browserfenster mit folgender Adresse:
 >https://github.com/JohannesRW/E1FI1_C-Demo
+## Knobelspiel
+2 Spieler wählen eine Zahl.\
+Ist die Summe der Zahlen gerade, gewinnt der Spieler mit der kleineren Zahl.\
+Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl.\
+Bei Gleicher Zahl unentschieden.
