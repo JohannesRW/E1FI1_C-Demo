@@ -18,6 +18,9 @@ void fnSchleifenFor(void);
 void fnSchleifenDoWhile(void);
 void fnSterneEinzeilig(void);
 void fnSterneMehrzeilig(void);
+void fnSternePyramide(void);
+void fnSterneDreieck(void);
+
 void fnZinsberechnung(void);
 void fnGauss(void);
 void fnLottozahlen(void);
@@ -157,6 +160,8 @@ void fnMenueSterne(void) {
         printf(GELB("Sterne:\n"));
         printf("1. Einzeilig\n");
         printf("2. Mehrzeilig\n");
+		printf("3. Pyramide\n");
+		printf("4. Dreieck\n");
         printf("\n");
         printf(ROT("0. Zur\x81 \bck\n\n"));
         printf("Auswahl: ");
@@ -168,6 +173,12 @@ void fnMenueSterne(void) {
             break;
         case 2: //Mehrzeilig
             fnSterneMehrzeilig();
+            break;
+        case 3: //Pyramide
+            fnSternePyramide();
+            break;
+        case 4: //Dreieck
+            fnSterneDreieck();
             break;
         default:
             break;
@@ -317,6 +328,54 @@ void fnSterneMehrzeilig(void) {
     system("Pause");//Beliebige Taste drücken... 
 }
 /*
+fnSternePyramide
+*/
+void fnSternePyramide(void) {
+    int i;
+	int i2;
+	int zeile;
+    int zeilen; //anzahl Zeilen
+    CLEAR();
+    printf(GELB("Sterne (Pyramide):\n"));
+    printf("Anzahl Zeilen: ");
+    scanf_s("%i", &zeilen);//Zeilen abfragen
+    //Sterne ausgeben
+    for (zeile = 1; zeile <= zeilen; zeile++) {
+		for(i2=1;i2<=((zeilen-zeile)*2+1)/2;i2++){
+					printf(" ");
+		}
+		for(i=1;i<=(zeile-1)*2+1;i++){
+			printf("*");
+		}
+		printf("\n");
+    }
+    printf("\n");
+    system("Pause");//Beliebige Taste drücken... 
+}
+
+/*
+fnSterneDreieck
+*/
+void fnSterneDreieck(void) {
+    int i;
+	int zeile;
+    int zeilen; //anzahl Zeilen
+    CLEAR();
+    printf(GELB("Sterne (Dreieck):\n"));
+    printf("Anzahl Zeilen: ");
+    scanf_s("%i", &zeilen);//Zeilen abfragen
+    //Sterne ausgeben
+    for (zeile = 1; zeile <= zeilen; zeile++) {
+		for(i=1;i<=zeile;i++){
+			printf("*");
+		}
+		printf("\n");
+    }
+    printf("\n");
+    system("Pause");//Beliebige Taste drücken... 
+}
+
+/*
 fnZinsberechnung
 Berrechnet die Anlagedauer, um aus einer angegebenen Startsumme mit einem angegebenen Zinssatz eine gewünschte Endsumme zu erreichen.
 Die Berechnung findet mittels einer For-Schleife statt.
@@ -334,7 +393,7 @@ void fnZinsberechnung(void) {
         if (anfangssumme <= 0) {
             printf(ROT("Anfangssumme darf nicht kleiner oder gleich 0 sein.\n"));
         }
-        printf("Anfangssumme:\t\t ");
+        printf("Anfangssumme:\t\t    ");
         scanf_s("%lf", &anfangssumme);//Anfangssumme abfragen
     } while (anfangssumme <= 0);//abfragen solange anfangssume <= 0
     do { //endsumme
@@ -344,7 +403,7 @@ void fnZinsberechnung(void) {
         if (anfangssumme >= endsumme && endsumme != -1) {
             printf(ROT("Endsumme darf nicht kleiner oder gleich der Anfangssumme sein.\n"));
         }
-        printf("Gew\x81 \bnschte Endsumme:\t ");
+        printf("Gew\x81 \bnschte Endsumme:\t    ");
         scanf_s("%lf", &endsumme);//Endsumme abfragen
     } while (anfangssumme >= endsumme);//abfragen solange anfangssume >= endsumme oder anfangssumme <= 0
     do { //zinssatz
@@ -355,7 +414,7 @@ void fnZinsberechnung(void) {
         if (zinssatz <= 0) {
             printf(ROT("Zinssatz darf nicht kleiner gleich 0%% sein.\n"));
         }
-        printf("Zinssatz:\t\t ");
+        printf("Zinssatz:\t\t    ");
         scanf_s("%lf", &zinssatz);//zinssatz abfragen
     } while (zinssatz <= 0);//abfragen solange zinssatz <= 0
 
@@ -367,15 +426,15 @@ void fnZinsberechnung(void) {
     printf("\n");
     //Berechnung
     for (jahre = 0, guthaben = anfangssumme; guthaben < endsumme; jahre++){
-        printf("%4i. Jahr: %10.2f EUR\t\tZinsen:%10.4f EUR\t\tGuthaben: %10.2f EUR\n",jahre+1,guthaben, guthaben * zinssatz/100, guthaben +(guthaben / 100 * zinssatz));
+        printf("%4i. Jahr Startguthaben:%10.2f EUR\t\tZinsen:%10.4f EUR\t\tGuthaben: %10.2f EUR\n",jahre+1,guthaben, guthaben * zinssatz/100, guthaben +(guthaben / 100 * zinssatz));
         guthaben += guthaben / 100 * zinssatz;
     }
     //Ausgabe
     if (jahre == 1) {
-        printf("\nGuthaben nach %i Jahr: %10.2f EUR\t(Wunschsumme + %.2f EUR)\n\n", jahre, guthaben, guthaben - endsumme);//roundf() rundet auf Ganzzahl, da Cent gewollt: Guthaben verhundertfachen, runden, durch 100 teilen.
+        printf("\nGuthaben nach %i Jahr:    %10.2f EUR\t\t(Wunschsumme + %.2f EUR)\n\n", jahre, guthaben, guthaben - endsumme);
     }
     else {
-        printf("\nGuthaben nach %i Jahren: %10.2f EUR\t(Wunschsumme + %.2f EUR)\n\n", jahre, guthaben, guthaben-endsumme);
+        printf("\nGuthaben nach %i Jahren:  %10.2f EUR\t\t(Wunschsumme + %.2f EUR)\n\n", jahre, guthaben, guthaben-endsumme);
     }
     system("Pause");//Beliebige Taste drücken...
 }
