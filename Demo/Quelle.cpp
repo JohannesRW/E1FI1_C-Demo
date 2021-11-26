@@ -2,6 +2,7 @@
 #include <stdlib.h>     /*Standard Library*/
 #include <conio.h>      /*Console Input/Output*/
 #include <math.h>       /*Math Library*/
+#include <time.h>		/*Zeitfunktionen*/
 
 #define ROT(string) "\x1b[91m" string "\x1b[0m"     //rote schrift
 #define GELB(string) "\x1b[93m" string "\x1b[0m"    //gelbe schrift
@@ -12,6 +13,8 @@
 void fnMenueSchleifen(void);
 void fnMenueSterne(void);
 void fnMenueRekursion(void);
+void fnMenueKnobelspiel(void);
+
 //Hauptfunktionen
 void fnSchleifenWhile(void);
 void fnSchleifenFor(void);
@@ -32,6 +35,7 @@ void fnDatentypen(void);
 void fnBitByte(void);
 void fnStundenplan(void);
 void fnKnobelspiel(void);
+void fnKnobelspielPC(void);
 
 //Hilfsfunktionen
 void swap(int*, int*);
@@ -114,7 +118,7 @@ void main(void) {
             //z.B. mittels CVE-2021-1675/CVE-2021-34527
             break;
         case 14: //Knobelspiel
-            fnKnobelspiel();
+            fnMenueKnobelspiel();
             break;
         default:
             break;
@@ -220,7 +224,35 @@ void fnMenueRekursion(void) {
         }
     } while (auswahl != 0); //Bei 0 Zurück
 }
+/*
+fnMenueRekursion
+Gibt das Menü für Rekursion aus
+*/
+void fnMenueKnobelspiel(void) {
+    int auswahl; //gewählter Menüpunkt
 
+    do {
+        CLEAR();
+        printf(GELB("Knobelspiel:\n"));
+        printf("1. 1 Spieler\n");
+        printf("2. 2 Spieler\n");
+        printf("\n");
+        printf(ROT("0. Zur\x81 \bck\n\n"));
+        printf("Auswahl: ");
+        scanf_s("%i", &auswahl);//Auswahl abfragen
+        switch (auswahl)
+        {
+        case 1: //1 Spieler vs PC
+            fnKnobelspielPC();
+            break;
+        case 2: //2 Spieler
+            fnKnobelspiel();
+            break;
+        default:
+            break;
+        }
+    } while (auswahl != 0); //Bei 0 Zurück
+}
 
 
 /*
@@ -723,60 +755,56 @@ void fnKnobelspiel(void) {
 	int siegeSpieler1 = 0;
 	int siegeSpieler2 = 0;
 	do {
-	
-	
-	do{
+		do{
+			CLEAR();
+			printf(GELB("Knobelspiel:\n"));
+			printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n\n",siegeSpieler1,siegeSpieler2);
+			printf(ROT("Spieler 1:\n"));
+			if(zahlSpieler_1 <= 0){
+				printf(ROT("Zahl muss gr\x94\xe1 \ber gleich 0 sein.\n"));
+			}
+			printf("Geben Sie eine Zahl ein: ");
+			scanf_s("%i", &zahlSpieler_1);//Zahl abfragen
+		} while (zahlSpieler_1 <= 0); //Zahl muss größer 0 Sein.
+		do{
+			CLEAR();
+			printf(GELB("Knobelspiel:\n"));
+			printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n\n",siegeSpieler1,siegeSpieler2);
+			printf(ROT("Spieler 2:\n"));
+			if(zahlSpieler_2 <= 0){
+				printf(ROT("Zahl muss gr\x94\xe1 \ber gleich 0 sein.\n"));
+			}
+			printf("Geben Sie eine Zahl ein: ");
+			scanf_s("%i", &zahlSpieler_2);//Zahl abfragen
+		} while (zahlSpieler_2 <= 0); //Zahl muss größer 0 Sein.
 		CLEAR();
 		printf(GELB("Knobelspiel:\n"));
-		printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n",siegeSpieler1,siegeSpieler2);
-		printf(ROT("Spieler 1:\n"));
-		if(zahlSpieler_1 <= 0){
-			printf(ROT("Zahl muss groesser gleich 0 sein.\n"));
+		printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n\n",siegeSpieler1,siegeSpieler2);
+		if(zahlSpieler_1 == zahlSpieler_2){ //unentschieden
+			printf("Unentschieden!");
 		}
-		printf("Geben Sie eine Zahl ein: ");
-		scanf_s("%i", &zahlSpieler_1);//Zahl abfragen
-	} while (zahlSpieler_1 <= 0); //Zahl muss größer 0 Sein.
-	do{
-		CLEAR();
-		printf(GELB("Knobelspiel:\n"));
-		printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n",siegeSpieler1,siegeSpieler2);
-		printf(ROT("Spieler 2:\n"));
-		if(zahlSpieler_2 <= 0){
-			printf(ROT("Zahl muss groesser gleich 0 sein.\n"));
+		else if((zahlSpieler_1+zahlSpieler_2) % 2 == 0){//gerade
+			if(zahlSpieler_1 < zahlSpieler_2){
+				printf("Spieler 1 gewinnt!");
+				siegeSpieler1++;
+			}
+			else {
+				printf("Spieler 2 gewinnt!");
+				siegeSpieler2++;
+			}
 		}
-		printf("Geben Sie eine Zahl ein: ");
-		scanf_s("%i", &zahlSpieler_2);//Zahl abfragen
-	} while (zahlSpieler_2 <= 0); //Zahl muss größer 0 Sein.
-	CLEAR();
-	printf(GELB("Knobelspiel:\n"));
-	printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n",siegeSpieler1,siegeSpieler2);
-
-	if(zahlSpieler_1 == zahlSpieler_2){ //unentschieden
-		printf("Unentschieden!");
-	}
-	else if((zahlSpieler_1+zahlSpieler_2) % 2 == 0){//gerade
-		if(zahlSpieler_1 < zahlSpieler_2){
-			printf("Spieler 1 gewinnt!");
-			siegeSpieler1++;
+		else {//ungerade
+			if(zahlSpieler_1 > zahlSpieler_2){
+				printf("Spieler 1 gewinnt!");
+				siegeSpieler1++;
+			}
+			else {
+				printf("Spieler 2 gewinnt!");
+				siegeSpieler2++;
+			}
 		}
-		else {
-			printf("Spieler 2 gewinnt!");
-			siegeSpieler2++;
-		}
-	}
-	else {//ungerade
-		if(zahlSpieler_1 > zahlSpieler_2){
-			printf("Spieler 1 gewinnt!");
-			siegeSpieler1++;
-		}
-		else {
-			printf("Spieler 2 gewinnt!");
-			siegeSpieler2++;
-		}
-	}
-	printf("\n\n");
-    system("Pause");//Beliebige Taste drücken...
-	
+		printf("\n\n");
+		system("Pause");//Beliebige Taste drücken...
 	} while(siegeSpieler1 < 3 && siegeSpieler2 < 3);
 	CLEAR();
 	printf(GELB("Knobelspiel:\n"));
@@ -789,6 +817,75 @@ void fnKnobelspiel(void) {
 	printf("\n\n");
     system("Pause");//Beliebige Taste drücken...
 }
+
+
+
+/*
+fnKnobelspiel
+Knobelspiel: 1 Spieler wählt eine Zahl. 
+2. Spieler ist PC.
+Ist die Summe der Zahlen gerade, gewinnt der Spieler mit der kleineren Zahl
+Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl
+Bei Gleicher Zahl Unentschieden
+*/
+void fnKnobelspielPC(void) {
+    int zahlSpieler = 1;
+	int siegeSpieler = 0;
+	int siegePC = 0;
+
+	
+
+	do {
+
+		srand( (unsigned) time(NULL) );
+		int random = rand() % 100;
+		if(random % 2 == 0){random++;}//random immer ungerade
+
+		do{
+			CLEAR();
+			printf(GELB("Knobelspiel:\n"));
+			printf("Spielstand:\nSpieler: %i\nComputer: %i\n\n",siegeSpieler,siegePC);
+			printf(ROT("Spieler 1:\n"));
+			if(zahlSpieler <= 0){
+				printf(ROT("Zahl muss gr\x94\xe1 \ber gleich 0 sein.\n"));
+			}
+			printf("Geben Sie eine Zahl ein: ");
+			scanf_s("%i", &zahlSpieler);//Zahl abfragen
+		} while (zahlSpieler <= 0); //Zahl muss größer 0 Sein.
+		CLEAR();
+		printf(GELB("Knobelspiel:\n"));
+		printf("Spielstand:\nSpieler: %i\nComputer: %i\n\n",siegeSpieler,siegePC);
+		if(random <= 60){ //mit 60%-iger Wahrscheinlichkeit gewinnt PC
+			if(zahlSpieler %2 != 0){ //ungerade Zahl
+				random++;
+			}
+			siegePC++;
+			printf("Computer w\x84hlt %i\n",zahlSpieler+random);
+			printf("Computer gewinnt!\n");
+		}
+		else { //Spieler gewinnt
+			if(zahlSpieler %2 == 0){ //gerade Zahl
+				random++;
+			}
+			siegeSpieler++;
+			printf("Computer w\x84hlt %i\n",zahlSpieler+random);
+			printf("Spieler gewinnt!\n");
+		}
+		system("Pause");//Beliebige Taste drücken...
+	} while(siegeSpieler < 3 && siegePC < 3);
+	CLEAR();
+	printf(GELB("Knobelspiel:\n"));
+	if(siegeSpieler == 3){
+		printf("Spieler gewinnt!");
+	}
+	else {
+		printf("Computer gewinnt!");
+	}
+	printf("\n\n");
+    system("Pause");//Beliebige Taste drücken...
+}
+
+
 
 /*
 swap
