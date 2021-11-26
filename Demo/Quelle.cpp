@@ -31,6 +31,8 @@ void fnNotendurchschnitt(void);
 void fnDatentypen(void);
 void fnBitByte(void);
 void fnStundenplan(void);
+void fnKnobelspiel(void);
+
 //Hilfsfunktionen
 void swap(int*, int*);
 double durchschnitt(double vektor[], int anzahl);
@@ -61,6 +63,7 @@ void main(void) {
         printf("11.  Stundenplan\n");
         printf("12.  Hilfe/GitHub\n");
         printf("13.  Spezial Kn\x94pfle\n");
+		printf("14.  Knobelspiel\n");
         printf("\n");
         printf(ROT("0.   Beenden\n\n"));
         printf("Auswahl: ");
@@ -109,6 +112,9 @@ void main(void) {
             //Da könnt ja jetzt auch sowas wie "format c:/y/u" stehen... 
             //vorher noch Adminrechte verschaffen (Local Privilege Escalation) huiuiui böse...
             //z.B. mittels CVE-2021-1675/CVE-2021-34527
+            break;
+        case 14: //Knobelspiel
+            fnKnobelspiel();
             break;
         default:
             break;
@@ -342,7 +348,7 @@ void fnSternePyramide(void) {
     //Sterne ausgeben
     for (zeile = 1; zeile <= zeilen; zeile++) {
 		for(i2=1;i2<=((zeilen-zeile)*2+1)/2;i2++){
-					printf(" ");
+			printf(" ");
 		}
 		for(i=1;i<=(zeile-1)*2+1;i++){
 			printf("*");
@@ -704,6 +710,55 @@ void fnStundenplan(void) {
     system("Pause");//Beliebige Taste drücken...
 }
 
+/*
+fnKnobelspiel
+Knobelspiel: 2 Spieler wählen eine Zahl.
+Ist die Summe der Zahlen gerade, gewinnt der Spieler mit der kleineren Zahl
+Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl
+Bei Gleicher Zahl Unentschieden
+*/
+void fnKnobelspiel(void) {
+    int zahlSpieler_1 = 0;
+	int zahlSpieler_2 = 0;
+	do{
+		CLEAR();
+		printf(GELB("Knobelspiel:\n"));
+		printf(ROT("Spieler 1:\n"));
+		printf("Geben Sie eine Zahl ein: ");
+		scanf_s("%i", &zahlSpieler_1);//Zahl abfragen
+	} while (zahlSpieler_1 <= 0);
+	do{
+		CLEAR();
+		printf(GELB("Knobelspiel:\n"));
+		printf(ROT("Spieler 2:\n"));
+		printf("Geben Sie eine Zahl ein: ");
+		scanf_s("%i", &zahlSpieler_2);//Zahl abfragen
+	} while (zahlSpieler_2 <= 0);
+	CLEAR();
+	printf(GELB("Knobelspiel:\n"));
+
+	if(zahlSpieler_1 == zahlSpieler_2){ //unentschieden
+		printf("Unentschieden!");
+	}
+	else if((zahlSpieler_1+zahlSpieler_2) % 2 == 0){//gerade
+		if(zahlSpieler_1 < zahlSpieler_2){
+			printf("Spieler 1 gewinnt!");
+		}
+		else {
+			printf("Spieler 2 gewinnt!");
+		}
+	}
+	else {//ungerade
+		if(zahlSpieler_1 > zahlSpieler_2){
+			printf("Spieler 1 gewinnt!");
+		}
+		else {
+			printf("Spieler 2 gewinnt!");
+		}
+	}
+	printf("\n");
+    system("Pause");//Beliebige Taste drücken...
+}
 
 /*
 swap
