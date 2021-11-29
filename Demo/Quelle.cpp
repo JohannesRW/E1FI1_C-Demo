@@ -741,10 +741,10 @@ void fnStundenplan(void) {
     printf("\n");
     system("Pause");//Beliebige Taste drücken...
 }
-
 /*
 fnKnobelspiel
-Knobelspiel: 2 Spieler wählen eine Zahl.
+Knobelspiel: 
+2 Spieler wählen eine Zahl.
 Ist die Summe der Zahlen gerade, gewinnt der Spieler mit der kleineren Zahl
 Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl
 Bei Gleicher Zahl Unentschieden
@@ -817,12 +817,10 @@ void fnKnobelspiel(void) {
 	printf("\n\n");
     system("Pause");//Beliebige Taste drücken...
 }
-
-
-
 /*
-fnKnobelspiel
-Knobelspiel: 1 Spieler wählt eine Zahl. 
+fnKnobelspielPC
+Knobelspiel: 
+1. Spieler wählt eine Zahl. 
 2. Spieler ist PC.
 Ist die Summe der Zahlen gerade, gewinnt der Spieler mit der kleineren Zahl
 Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl
@@ -832,9 +830,6 @@ void fnKnobelspielPC(void) {
     int zahlSpieler = 1;
 	int siegeSpieler = 0;
 	int siegePC = 0;
-
-	
-
 	do {
 
 		srand( (unsigned) time(NULL) );
@@ -884,9 +879,6 @@ void fnKnobelspielPC(void) {
 	printf("\n\n");
     system("Pause");//Beliebige Taste drücken...
 }
-
-
-
 /*
 swap
 Tauscht den Zeiger von 2 Variablen.
