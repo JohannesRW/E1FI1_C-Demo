@@ -836,6 +836,7 @@ Es wird gespielt bis ein Spieler 3 mal gewonnen hat
 */
 void fnKnobelspielPC(void) {
 	int gewinnenNach = 3;
+	int gewinnWahrscheinlichkeitPC = 60;//gewinnwahrscheinlichkeit in prozent
     int zahlSpieler = 1;
 	int siegeSpieler = 0;
 	int siegePC = 0;
@@ -860,7 +861,7 @@ void fnKnobelspielPC(void) {
 		printf(GELB("Knobelspiel:\n"));
 		printf("Spielstand:\nSpieler: %i\nComputer: %i\n\n",siegeSpieler,siegePC);
 		printf(GELB("Runde %i\n"),runde);
-		if(random <= 60){ //mit 60%-iger Wahrscheinlichkeit gewinnt PC
+		if(random <= gewinnWahrscheinlichkeitPC){ //mit x%-iger Wahrscheinlichkeit gewinnt PC
 			if(zahlSpieler %2 != 0){ //ungerade Zahl
 				random++;//zufallszahl = gerade
 			}
