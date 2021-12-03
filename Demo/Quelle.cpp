@@ -748,6 +748,7 @@ Knobelspiel:
 Ist die Summe der Zahlen gerade, gewinnt der Spieler mit der kleineren Zahl
 Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl
 Bei Gleicher Zahl Unentschieden
+Es wird gespielt bis ein Spieler 3 mal gewonnen hat
 */
 void fnKnobelspiel(void) {
 	int gewinnenNach = 3;
@@ -831,6 +832,7 @@ Knobelspiel:
 Ist die Summe der Zahlen gerade, gewinnt der Spieler mit der kleineren Zahl
 Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl
 Bei Gleicher Zahl Unentschieden
+Es wird gespielt bis ein Spieler 3 mal gewonnen hat
 */
 void fnKnobelspielPC(void) {
 	int gewinnenNach = 3;
@@ -840,8 +842,8 @@ void fnKnobelspielPC(void) {
 	int runde = 1;
 	do {
 		srand( (unsigned) time(NULL) );
-		int random = rand() % 100;
-		if(random % 2 == 0){random++;}//random immer ungerade
+		int random = rand() % 100;//Zufallszahl zwischen 1 und 100
+		if(random % 2 == 0){random++;}//zufallszahl immer ungerade
 		do{
 			CLEAR();
 			printf(GELB("Knobelspiel:\n"));
@@ -860,19 +862,19 @@ void fnKnobelspielPC(void) {
 		printf(GELB("Runde %i\n"),runde);
 		if(random <= 60){ //mit 60%-iger Wahrscheinlichkeit gewinnt PC
 			if(zahlSpieler %2 != 0){ //ungerade Zahl
-				random++;
+				random++;//zufallszahl = gerade
 			}
-			siegePC++;
 			printf("Computer w\x84hlt %i\n",zahlSpieler+random);
 			printf("Computer gewinnt!\n");
+			siegePC++;
 		}
 		else { //Spieler gewinnt
 			if(zahlSpieler %2 == 0){ //gerade Zahl
-				random++;
+				random++;//zufallszahl = gerade
 			}
-			siegeSpieler++;
 			printf("Computer w\x84hlt %i\n",zahlSpieler+random);
 			printf("Spieler gewinnt!\n");
+			siegeSpieler++;
 		}
 		system("Pause");//Beliebige Taste drücken...
 		runde++;
