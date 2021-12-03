@@ -750,15 +750,18 @@ Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl
 Bei Gleicher Zahl Unentschieden
 */
 void fnKnobelspiel(void) {
+	int gewinnenNach = 3;
     int zahlSpieler_1 = 1;
 	int zahlSpieler_2 = 1;
 	int siegeSpieler1 = 0;
 	int siegeSpieler2 = 0;
+	int runde = 1;
 	do {
 		do{
 			CLEAR();
 			printf(GELB("Knobelspiel:\n"));
 			printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n\n",siegeSpieler1,siegeSpieler2);
+			printf(GELB("Runde %i\n"),runde);
 			printf(ROT("Spieler 1:\n"));
 			if(zahlSpieler_1 <= 0){
 				printf(ROT("Zahl muss gr\x94\xe1 \ber gleich 0 sein.\n"));
@@ -770,6 +773,7 @@ void fnKnobelspiel(void) {
 			CLEAR();
 			printf(GELB("Knobelspiel:\n"));
 			printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n\n",siegeSpieler1,siegeSpieler2);
+			printf(GELB("Runde %i\n"),runde);
 			printf(ROT("Spieler 2:\n"));
 			if(zahlSpieler_2 <= 0){
 				printf(ROT("Zahl muss gr\x94\xe1 \ber gleich 0 sein.\n"));
@@ -780,6 +784,7 @@ void fnKnobelspiel(void) {
 		CLEAR();
 		printf(GELB("Knobelspiel:\n"));
 		printf("Spielstand:\nSpieler 1: %i\nSpieler 2: %i\n\n",siegeSpieler1,siegeSpieler2);
+		printf(GELB("Runde %i\n"),runde);
 		if(zahlSpieler_1 == zahlSpieler_2){ //unentschieden
 			printf("Unentschieden!");
 		}
@@ -805,7 +810,8 @@ void fnKnobelspiel(void) {
 		}
 		printf("\n\n");
 		system("Pause");//Beliebige Taste drücken...
-	} while(siegeSpieler1 < 3 && siegeSpieler2 < 3);
+		runde++;
+	} while(siegeSpieler1 < gewinnenNach && siegeSpieler2 < gewinnenNach);
 	CLEAR();
 	printf(GELB("Knobelspiel:\n"));
 	if(siegeSpieler1 == 3){
@@ -827,19 +833,20 @@ Ist die Summe der Zahlen ungerade, gewinnt der Spieler mit der größeren Zahl
 Bei Gleicher Zahl Unentschieden
 */
 void fnKnobelspielPC(void) {
+	int gewinnenNach = 3;
     int zahlSpieler = 1;
 	int siegeSpieler = 0;
 	int siegePC = 0;
+	int runde = 1;
 	do {
-
 		srand( (unsigned) time(NULL) );
 		int random = rand() % 100;
 		if(random % 2 == 0){random++;}//random immer ungerade
-
 		do{
 			CLEAR();
 			printf(GELB("Knobelspiel:\n"));
 			printf("Spielstand:\nSpieler: %i\nComputer: %i\n\n",siegeSpieler,siegePC);
+			printf(GELB("Runde %i\n"),runde);
 			printf(ROT("Spieler 1:\n"));
 			if(zahlSpieler <= 0){
 				printf(ROT("Zahl muss gr\x94\xe1 \ber gleich 0 sein.\n"));
@@ -850,6 +857,7 @@ void fnKnobelspielPC(void) {
 		CLEAR();
 		printf(GELB("Knobelspiel:\n"));
 		printf("Spielstand:\nSpieler: %i\nComputer: %i\n\n",siegeSpieler,siegePC);
+		printf(GELB("Runde %i\n"),runde);
 		if(random <= 60){ //mit 60%-iger Wahrscheinlichkeit gewinnt PC
 			if(zahlSpieler %2 != 0){ //ungerade Zahl
 				random++;
@@ -867,7 +875,8 @@ void fnKnobelspielPC(void) {
 			printf("Spieler gewinnt!\n");
 		}
 		system("Pause");//Beliebige Taste drücken...
-	} while(siegeSpieler < 3 && siegePC < 3);
+		runde++;
+	} while(siegeSpieler < gewinnenNach && siegePC < gewinnenNach);
 	CLEAR();
 	printf(GELB("Knobelspiel:\n"));
 	if(siegeSpieler == 3){
